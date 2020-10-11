@@ -10,8 +10,7 @@ router.post('/article/post', async (req, res) => {
         await article.save()
         res.status(201).send({
             state: true,
-            message: "L'article a été créé avec succès!",
-            data: article
+            message: "L'article a été créé avec succès!"
         })
     } catch (e) {
         res.status(400).send({
@@ -48,11 +47,7 @@ router.get('/article/:id/get', async (req, res) => {
                 message: "Article non trouvé!"
             })
         }
-        res.send({
-            state: true,
-            message: "L'article a été récuperé!",
-            data: article
-        })
+        res.send(article)
     } catch (e) {
         res.status(400).send({
             state: false,
