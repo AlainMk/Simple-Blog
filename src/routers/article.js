@@ -37,7 +37,7 @@ router.get('/article/getAll', async (req, res) => {
     }
 })
 
-router.get('/article/:id/get', async (req, res) => {
+router.get('/article/:id', async (req, res) => {
     const _id = req.params.id
     try {
         const article = await Article.findById({_id})
